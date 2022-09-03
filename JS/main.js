@@ -1,16 +1,4 @@
-// array carrito 
-
-
-
-// fc generica para push
-// elegir productos a travez de un menu 
-
-
-
-
-
-// array de stock de prendas 
-
+//pre-entrega
 
 function Productos(nombre, precio) {
 
@@ -44,13 +32,6 @@ const prenda4 = new Productos("cami saco", 12000);
 const prenda5 = new Productos("zapatillas", 20000);
 
 let carrito = [];
-//declarar funcion generica de push
-
-function cargar(arr,valor) {
-
-    arr.push(valor);
-    
-}
 
 // menu para seleccion de prendas y q se haga el push al carrito
 
