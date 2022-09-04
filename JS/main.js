@@ -13,7 +13,7 @@ function Pagos(forma, descuento) {
     this.descuento = descuento;
     
 }
-
+/*
 function Carro (productos, subtotal, formas, total) {
 
     this.productos = productos;
@@ -22,6 +22,11 @@ function Carro (productos, subtotal, formas, total) {
     this.total = total;
 
     
+}*/
+function Carro(resultado) {
+
+    this.resultado = parseInt(resultado);
+        
 }
 
 
@@ -38,35 +43,39 @@ let carrito = [];
 function seleccion() {
 
     let eleccion = prompt("Ingresa el número de la prenda que eligas: \n 1-remera $2000\n 2-buzo $6000\n 3-jeans $10000\n 4- camisaco $12000 \n 5-zapatillas $20000 \n 6-SALIR ")
-        
+    suma = 0;   
     do {
        
         switch (eleccion) {
             case "1":
                 
                 carrito.push(prenda1);
-                console.log(Carro);
+                console.log(carrito);
+               suma = suma + 2000;
                
                 break;
             case "2":
                 carrito.push(prenda2);
-                console.log(Carro);
+                console.log(carrito);
+                suma = suma + 6000;
                
                 break;
             case "3":
                 carrito.push(prenda3);
-                console.log(Carro);
+                console.log(carrito);
+                suma = suma + 10000;
                
                 break;
             case "4":
                 carrito.push(prenda4);
-                console.log(Carro);
+                console.log(carrito);
+                suma = suma + 12000;
                
                 break;
             case "5":
                 carrito.push(prenda5);
-                console.log(Carro);
-               
+                console.log(carrito);
+                suma = suma + 20000;
                 break;
         
             default:
@@ -79,22 +88,26 @@ function seleccion() {
 
     } while (eleccion != 6 && eleccion != "6");
     
-    
+    return resultado = alert("El total de tu compra es de " + suma);
+
 }
 
 seleccion();
 
-// meidos de pago recargo o descuentos
 
 
-function Pagos(nombre, total ) {
+// meidos de pago recargo o descuentos (ver la clase)
+
+
+function Pago(nombre, resultado ) {
 
     this.nombre = nombre;
-    this.total = parseInt(total);
+    this.resultado = parseInt(resultado);
 
     this.sumarRecargo = ()=>{
 
-        pago.push (this.nombre, this.total) 
+        pago.push = this.resultado * 1.21;
+       
         
     }
 
@@ -107,19 +120,12 @@ function Pagos(nombre, total ) {
    
 }
 
-const pagoNuevo1 = new Pagos ("tarjeta crédito", 20);
-const pagoNuevo2 = new Pagos ("debito", 20);
-const pagoNuevo3 = new Pagos ("efectivo", 15);
+const pagoNuevo1 = new Pago ("tarjeta crédito", 20);
+const pagoNuevo2 = new Pago ("debito", 20);
+const pagoNuevo3 = new Pago ("efectivo", 15);
 
-/*cargar (pago, pagoNuevo1);
-cargar (pago, pagoNuevo2);
-cargar (pago, pagoNuevo3);
-
-console.log(pago);*/
-
-
-
-/*function fPagos() {
+console.log(resultado);
+function fPagos() {
     let  pagos = prompt ("Selecciona la forma de pago, ingresando el número correspondiente : \n 1-Crédito \n 2-Debito \n 3-Efectivo o transferencia");
     
             switch (pagos) {
@@ -145,15 +151,14 @@ console.log(pago);*/
          
     }
     
-    fPagos();*/
+    fPagos();
 
 
-
-function crearCarro(carrito) {
+function crearCarro(Carro) {
     
-for (const precio of carrito) {
+for (const resultado of Carro) {
     
-    carrito.forEach(element => {
+    Carro.forEach(element => {
         let suma = suma + element.precio
     });
 }
