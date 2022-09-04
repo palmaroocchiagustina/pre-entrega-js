@@ -133,12 +133,6 @@ function fPagos() {
             case "1":
                 carrito.push(pago1)
                 alert ("Débito, esta opción tiene 20% de recargo.");
-
-                recargo = () => {
-
-                    return subTotal = subTotal * 1.20;
-                }
-                console.log(pago1.subTotal);
                 break;
             case "2":
                 carrito.push(pago2);
