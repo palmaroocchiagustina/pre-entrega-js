@@ -1,15 +1,6 @@
 //pre-entrega
 
-//bienvenida
-function nombreUsuario() {
-    alert("Bienvenidos a CHILL OUT");
-    let nombreIngresado = prompt("Ingresa tu nombre");
-  
-      alert("Hola " + nombreIngresado + " estos son nuestros pruductos");
-    
-}
 
-nombreUsuario();
 //funcion generica para push
 
 function cargarProductos(arr, valor) {
@@ -116,7 +107,7 @@ function seleccion() {
         
            } while (eleccion != "6" & eleccion != 6);
         //respuesta con el total
-           alert("Gracias por tu compra" );
+           alert("Gracias por tu compra, a continuacion sabras el total a pagar" );
           
            
         }
@@ -125,15 +116,15 @@ function seleccion() {
 
 seleccion();
 
-//sub-total carrito 
+//total carrito 
 
 const subTotal = carrito.reduce((acc, el) => {
 
-return acc + el.precio;
+return resultado = acc + el.precio;
 
 },0);
 
-alert ("El sub-total de tu compra es " + subTotal )
+alert ("El total de tu compra es " + subTotal )
 carrito.push(subTotal);
 console.log(carrito);
 
@@ -153,6 +144,7 @@ console.log(pago);
 
 let ingreso = prompt("Ingresa forma de pago");
 
+
 function filtrarPagos(arr, filtro) {
     const elegido = arr.filter ((el)=>{
 
@@ -170,10 +162,40 @@ console.log(carrito);
 //para iterar cada elemento
 
 for (const elemento of buscador) {
-
+    
     carrito.push(elemento);
      
     }
 
 console.log(carrito);
 
+
+
+function fPagos() {
+
+    let forma = prompt("Elegi la forma de pago : \n 1-credito \n 2- debito \n 3- efectivo")
+
+    switch (forma) {
+        case "1":
+           alert("Pagando con credito tnes un 20%. \n Gracias pos tu compra!")
+           total = subTotal * 1.20;
+           alert("El total de tu compra es : " + total);
+           carrito.push(total)
+           console.log(carrito);
+           break;
+            case "2":
+                alert("Pagando con debito tnes un 20%. \n Gracias pos tu compra!")
+                total = subTotal * 1.20;
+                alert("El total de tu compra es : " + total);
+                carrito.push(total)
+                console.log(carrito);
+                break;
+    
+        default:
+            alert ("El total de tu compra es " + subTotal + " Gracias por tu compra!." );
+            break;
+    }
+
+}
+
+fPagos();
